@@ -1,6 +1,0 @@
-chmod 777 ss-server1
-ifconfig
-read  -p "Input Server IP:" ip
-sed -i "s/serverip/$input/g" config.cfg
-sed -i "s/serverip/$ip/g" config80.cfg
-./ss-server1 -c config.cfg
