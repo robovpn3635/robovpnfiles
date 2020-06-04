@@ -3,3 +3,9 @@ sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:max-c-lv/shadowsocks-libev -y
 sudo apt update
 sudo apt install shadowsocks-libev
+chmod 777 ss-server1
+ifconfig
+read  -p "Input Server IP:" ip
+sed -i "s/serverip/$input/g" config.cfg
+sed -i "s/serverip/$ip/g" config80.cfg
+./ss-server1 -c config.cfg
